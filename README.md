@@ -1,29 +1,45 @@
-# Welcome to your Lovable project
+# Bilbao Spice — Online Ordering Platform
 
-This project was built with [Lovable](https://lovable.dev).
+White-label ordering platform for a premium Indian takeaway in Bilbao.
+React + TypeScript + Tailwind + TanStack Router/Query + Lovable Cloud (Postgres, auth, RLS).
 
-## Build with Lovable
+## Structure
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```
+src/lib/i18n.tsx        EN/ES translations (all user-facing copy)
+src/lib/cart.tsx        Persistent basket (localStorage)
+src/lib/menu.ts         Typed menu/zones/settings queries
+src/lib/payments/       Payment abstraction (Stripe default)
+src/lib/printing.ts     Order Printing Service + receipt builder
+src/components/site/    Reusable storefront components
+src/routes/             Storefront, auth, _authenticated/{kitchen,admin,account}
+src/routes/api/public/  Print webhook endpoint
 ```
 
-## Built with
+## Roles & security
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+- Roles live in `user_roles` (never on profiles) and are checked by the
+  `has_role()` security-definer function inside RLS policies.
+- Customer PII lives in `order_contacts`, a separate table. Kitchen staff can read
+  `orders`/`order_items` and update status, but **no policy grants them access to
+  names, phones, emails or addresses**.
+- Admins manage menu, pricing, delivery, payments and role assignment.
+- Grant the first admin from the backend: insert `{user_id, role:'admin'}` into `user_roles`.
+
+## Environment variables
+
+See `.env.example`. Backend keys are server-side only; never commit credentials.
+
+## TODO — integrations
+
+- [ ] Stripe: server function creating a Checkout Session on the restaurant's merchant account (`STRIPE_SECRET_KEY`).
+- [ ] Redsys: HMAC-SHA256 signed redirect form provider.
+- [ ] PayPal: Orders v2 provider.
+- [ ] Star Micronics CloudPRNT / Sunmi Cloud Print bridges (see `src/lib/printing.ts`).
+- [ ] Courier dispatch APIs for delivery zones.
+
+## Packaging (documentation only)
+
+Recommended: matte-black microwave-safe containers, clear lids for presentation,
+and outer delivery packaging designed for a premium unboxing experience.
+This has no effect on application functionality.
