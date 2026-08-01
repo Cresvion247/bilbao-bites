@@ -49,23 +49,32 @@ function AdminPage() {
     if (!settings) return;
     const { error } = await supabase
       .from("restaurant_settings")
-      .update(patch)
+      .update(patch as never)
       .eq("id", settings.id);
-    if (error) return toast.error(t("common.error"));
+    if (error) {
+      toast.error(t("common.error"));
+      return;
+    }
     void queryClient.invalidateQueries({ queryKey: ["restaurant-settings"] });
     saved();
   }
 
   async function saveProduct(id: string, patch: Record<string, unknown>) {
-    const { error } = await supabase.from("products").update(patch).eq("id", id);
-    if (error) return toast.error(t("common.error"));
+    const { error } = await supabase.from("products").update(patch as never).eq("id", id);
+    if (error) {
+      toast.error(t("common.error"));
+      return;
+    }
     void queryClient.invalidateQueries({ queryKey: ["menu"] });
     saved();
   }
 
   async function saveZone(id: string, patch: Record<string, unknown>) {
-    const { error } = await supabase.from("delivery_zones").update(patch).eq("id", id);
-    if (error) return toast.error(t("common.error"));
+    const { error } = await supabase.from("delivery_zones").update(patch as never).eq("id", id);
+    if (error) {
+      toast.error(t("common.error"));
+      return;
+    }
     void queryClient.invalidateQueries({ queryKey: ["delivery-zones"] });
     saved();
   }
@@ -236,8 +245,11 @@ function AdminPage() {
                 onClick={async () => {
                   const { error } = await supabase
                     .from("user_roles")
-                    .insert({ user_id: roleUserId.trim(), role });
-                  if (error) return toast.error(t("common.error"));
+                    .insert({ user_id: roleUserId.trim(), role } as never);
+                  if (error) {
+      toast.error(t("common.error"));
+      return;
+    }
                   setRoleUserId("");
                   saved();
                 }}
