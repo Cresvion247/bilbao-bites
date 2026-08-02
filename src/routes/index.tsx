@@ -11,13 +11,13 @@ import heroImage from "@/assets/hero-curry.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Bilbao Spice — Premium Indian Takeaway in Bilbao" },
+      { title: "Curry Central — Premium Indian Takeaway in Bilbao" },
       {
         name: "description",
         content:
           "Slow-cooked curries, tandoor breads and combo boxes delivered across Deusto, Indautxu, Casco Viejo and Abando.",
       },
-      { property: "og:title", content: "Bilbao Spice — Premium Indian Takeaway in Bilbao" },
+      { property: "og:title", content: "Curry Central — Premium Indian Takeaway in Bilbao" },
       {
         property: "og:description",
         content: "Order Indian food for delivery or collection in central Bilbao.",

@@ -12,9 +12,9 @@ import { useI18n } from "@/lib/i18n";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Sign in — Bilbao Spice" },
-      { name: "description", content: "Sign in to track your Bilbao Spice orders and reorder." },
-      { property: "og:title", content: "Sign in — Bilbao Spice" },
+      { title: "Sign in — Curry Central" },
+      { name: "description", content: "Sign in to track your Curry Central orders and reorder." },
+      { property: "og:title", content: "Sign in — Curry Central" },
       { property: "og:description", content: "Track your orders and reorder in one tap." },
     ],
   }),

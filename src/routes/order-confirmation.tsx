@@ -9,9 +9,9 @@ import { formatMoney } from "@/lib/format";
 export const Route = createFileRoute("/order-confirmation")({
   head: () => ({
     meta: [
-      { title: "Order confirmed — Bilbao Spice" },
+      { title: "Order confirmed — Curry Central" },
       { name: "description", content: "Your Indian takeaway order has been sent to the kitchen." },
-      { property: "og:title", content: "Order confirmed — Bilbao Spice" },
+      { property: "og:title", content: "Order confirmed — Curry Central" },
       { property: "og:description", content: "Your order has been sent to the kitchen." },
     ],
   }),

@@ -9,9 +9,9 @@ import { formatMoney } from "@/lib/format";
 export const Route = createFileRoute("/basket")({
   head: () => ({
     meta: [
-      { title: "Your basket — Bilbao Spice" },
+      { title: "Your basket — Curry Central" },
       { name: "description", content: "Review your Indian takeaway order before checkout." },
-      { property: "og:title", content: "Your basket — Bilbao Spice" },
+      { property: "og:title", content: "Your basket — Curry Central" },
       { property: "og:description", content: "Review your order before checkout." },
     ],
   }),

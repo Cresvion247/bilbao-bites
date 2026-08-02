@@ -1,0 +1,1 @@
+UPDATE public.restaurant_settings SET restaurant_name = 'Curry Central';

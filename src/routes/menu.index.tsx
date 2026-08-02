@@ -10,13 +10,13 @@ import { menuQuery } from "@/lib/menu";
 export const Route = createFileRoute("/menu/")({
   head: () => ({
     meta: [
-      { title: "Menu — Bilbao Spice Indian Takeaway" },
+      { title: "Menu — Curry Central Indian Takeaway" },
       {
         name: "description",
         content:
           "Starters, curries, tandoor breads, rice and the Bilbao Indian Box combo. Choose your spice level at checkout.",
       },
-      { property: "og:title", content: "Menu — Bilbao Spice Indian Takeaway" },
+      { property: "og:title", content: "Menu — Curry Central Indian Takeaway" },
       {
         property: "og:description",
         content: "Browse our full Indian takeaway menu in Bilbao.",
