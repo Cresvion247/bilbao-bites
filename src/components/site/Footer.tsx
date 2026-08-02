@@ -12,7 +12,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3">
         <div>
           <p className="font-display text-lg text-gradient-warm">
-            {settings?.restaurant_name ?? "Bilbao Spice"}
+            {settings?.restaurant_name ?? "Curry Central"}
           </p>
           <p className="mt-2 text-sm text-muted-foreground">{settings?.address}</p>
         </div>
@@ -32,7 +32,7 @@ export function Footer() {
           <p className="mt-2 text-sm text-muted-foreground">{settings?.contact_phone}</p>
           <p className="text-sm text-muted-foreground">{settings?.contact_email}</p>
           <p className="mt-4 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {settings?.restaurant_name ?? "Bilbao Spice"}.{" "}
+            © {new Date().getFullYear()} {settings?.restaurant_name ?? "Curry Central"}.{" "}
             {t("footer.rights")}
           </p>
         </div>

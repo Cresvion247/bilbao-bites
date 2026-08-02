@@ -1,4 +1,4 @@
-# Bilbao Spice — Online Ordering Platform
+# Curry Central — Online Ordering Platform
 
 White-label ordering platform for a premium Indian takeaway in Bilbao.
 React + TypeScript + Tailwind + TanStack Router/Query + Lovable Cloud (Postgres, auth, RLS).

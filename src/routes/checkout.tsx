@@ -27,9 +27,9 @@ import { availableProviders, getPaymentProvider } from "@/lib/payments";
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Checkout — Bilbao Spice" },
+      { title: "Checkout — Curry Central" },
       { name: "description", content: "Complete your Indian takeaway order in Bilbao." },
-      { property: "og:title", content: "Checkout — Bilbao Spice" },
+      { property: "og:title", content: "Checkout — Curry Central" },
       { property: "og:description", content: "Complete your order for delivery or collection." },
     ],
   }),
