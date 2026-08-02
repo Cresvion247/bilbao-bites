@@ -42,7 +42,7 @@ function HomePage() {
           alt="Butter chicken curry with garlic naan and saffron rice"
           width={1600}
           height={1104}
-          className="absolute inset-0 size-full object-cover opacity-45"
+          className="absolute inset-0 size-full object-cover opacity-80"
         />
         <div
           className="absolute inset-0"
